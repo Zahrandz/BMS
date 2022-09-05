@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2021 at 06:21 PM
--- Server version: 10.4.20-MariaDB-log
--- PHP Version: 8.0.9
+-- Generation Time: Sep 05, 2022 at 05:24 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `moonday`
+-- Database: `bms`
 --
 
 -- --------------------------------------------------------
@@ -39,10 +39,73 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id_about`, `judul`, `deskripsi`, `foto`) VALUES
-(1, 'Our Story', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.', '1.png'),
-(2, 'Our Story 2', 'Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula.\r\n<br><br>\r\nAny questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879', '2.png'),
-(3, 'Our Mission', 'Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida. Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor ante. Ut mauris ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus euismod. Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.', '3.png'),
-(4, '- Steve Job’s', 'Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn\'t really do it, they just saw something. It seemed obvious to them after a while.', '');
+(5, 'tes', 'tes', '5.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id_contact` int(11) NOT NULL,
+  `alamat` text NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id_contact`, `alamat`, `email`, `phone`) VALUES
+(1, 'coba', 'asem baris', '1234567'),
+(8, 'tes', 'tes', '085780520632');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jabatan`
+--
+
+CREATE TABLE `jabatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `jabatan` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jabatan`
+--
+
+INSERT INTO `jabatan` (`id_jabatan`, `jabatan`) VALUES
+(6, 'Karyawan'),
+(7, 'Direktur Utama'),
+(9, 'Admin'),
+(10, 'ERP & Big Data'),
+(11, 'Finance'),
+(12, 'HRD'),
+(13, 'Manager Operation');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `karyawan`
+--
+
+CREATE TABLE `karyawan` (
+  `id_karyawan` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `alamat` text NOT NULL,
+  `id_jabatan` int(11) NOT NULL,
+  `foto` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `karyawan`
+--
+
+INSERT INTO `karyawan` (`id_karyawan`, `nama`, `alamat`, `id_jabatan`, `foto`) VALUES
+(24, 'Muhammad Zahran Dziqriansyah', 'Jl. Al Barkah RT 03 RW 09 No. 58 Jatijajar Tapos Depok', 9, '24.png');
 
 -- --------------------------------------------------------
 
@@ -60,100 +123,95 @@ CREATE TABLE `kota` (
 --
 
 INSERT INTO `kota` (`id_kota`, `kota`) VALUES
-(2, 'Jakarta'),
-(3, 'Malang'),
-(4, 'Bandung');
+(2, 'Jakarta Pusat'),
+(3, 'Jakarta Utara'),
+(4, 'Jakarta Barat'),
+(5, 'Jakarta Selatan'),
+(6, 'Jakarta Timur');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Table structure for table `pasar`
 --
 
-CREATE TABLE `menu` (
-  `id_menu` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `id_varian` int(11) NOT NULL,
-  `foto` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `menu`
---
-
-INSERT INTO `menu` (`id_menu`, `nama`, `deskripsi`, `id_varian`, `foto`) VALUES
-(1, 'Americano', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '1.png'),
-(2, 'Avocado Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '2.png'),
-(4, 'Biscoff Cloud Coffee', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '4.png'),
-(6, 'Caramel Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '6.png'),
-(8, 'Caramel Macchiato', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '8.png'),
-(9, 'Choco Mousse', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '9.png'),
-(10, 'Cinnamon Milk Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '10.png'),
-(11, 'Cold Brew', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '11.png'),
-(12, 'Dalgona Coffee', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '12.png'),
-(13, 'Hojicha Hot Chocolate', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '13.png'),
-(14, 'Hojicha Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '14.png'),
-(15, 'Honeycomb Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '15.png'),
-(16, 'Matcha Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '16.png'),
-(17, 'Milk Bubble Tea', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 3, '17.png'),
-(18, 'Pineapple Mango Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '18.png'),
-(19, 'Pumpkin Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '19.png'),
-(20, 'Raspberry Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '20.png'),
-(21, 'Korean Strawberry Milk', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n', 2, '21.png'),
-(22, 'Strawberry Bubble Tea', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 3, '22.png'),
-(23, 'Thai Bubble Tea', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 3, '23.png');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `promo`
---
-
-CREATE TABLE `promo` (
-  `id_promo` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `id_menu` int(11) NOT NULL,
-  `start` datetime DEFAULT NULL,
-  `end` datetime NOT NULL,
-  `foto` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `promo`
---
-
-INSERT INTO `promo` (`id_promo`, `nama`, `id_menu`, `start`, `end`, `foto`) VALUES
-(1, 'Healthy Month', 1, '2021-11-01 00:00:00', '2021-11-30 23:59:00', '1.png'),
-(2, 'Cold Brew Season', 1, '2021-10-25 00:00:00', '2021-12-01 23:59:00', '2.png'),
-(5, 'Strawberry Festival', 1, '2021-11-25 21:09:00', '2021-12-25 23:59:00', '5.png'),
-(6, 'Night Coffee', 4, '2021-10-01 00:00:00', '2021-12-31 23:59:00', '6.png');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `store`
---
-
-CREATE TABLE `store` (
-  `id_store` int(11) NOT NULL,
+CREATE TABLE `pasar` (
+  `id_pasar` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `alamat` text NOT NULL,
-  `id_kota` int(11) NOT NULL,
+  `id_wilayah` int(11) NOT NULL,
   `lokasi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `store`
+-- Dumping data for table `pasar`
 --
 
-INSERT INTO `store` (`id_store`, `nama`, `alamat`, `id_kota`, `lokasi`) VALUES
-(1, 'Moonday Kelapa Gading', 'Jl. Raya Klp. Hybrida Blok A1 No. 8 Kecamatan Kelapa Gading Kota Jakarta Utara', 2, 'https://goo.gl/maps/sHjSuUWeMube7Qmy5'),
-(3, 'Moonday Jatiwaringin', 'Jl. Raya Jatiwaringin No. 20, Cipinang Melayu Kecamatan Makassar, Jakarta', 2, 'https://goo.gl/maps/5gJkkxaRPi4BTFSa7'),
-(4, 'Moonday Town Square Malang', 'Town Square Malang lt. 2 Jl. Veteran, Penanggungan, Kota Malang', 3, 'https://goo.gl/maps/BgUKw3umyAJBPscK8'),
-(5, 'Moonday Lowokwaru', 'Jl. Bunga Camalia No. 1, Lowokwaru, Kota Malang', 3, 'https://goo.gl/maps/EfP3z9GgJ8wsh49Z8'),
-(6, 'Moonday PVJ Bandung', 'Paris Van Java lt. 3 Jl. Sukajadi Cipedes, Bandung', 4, 'https://goo.gl/maps/UrFn1M75ENPNKfRNA'),
-(7, 'Moonday TSM Bandung', 'Trans Studio Bandung lt. 2 Jl. Gatot Subroto, Cibangkong, Batununggal, Bandung', 4, 'https://g.page/transstudiomallbandung?share');
+INSERT INTO `pasar` (`id_pasar`, `nama`, `alamat`, `id_wilayah`, `lokasi`) VALUES
+(4, 'Pasar Jaya', 'a', 1, 'coba');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesan`
+--
+
+CREATE TABLE `pesan` (
+  `id_pesan` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `pesan` text NOT NULL,
+  `tanggal` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesan`
+--
+
+INSERT INTO `pesan` (`id_pesan`, `nama`, `email`, `pesan`, `tanggal`) VALUES
+(7, 'coba', 'a', 'm', '2022-08-09 14:38:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portfolio`
+--
+
+CREATE TABLE `portfolio` (
+  `id_portfolio` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `tanggal` datetime NOT NULL,
+  `foto` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `portfolio`
+--
+
+INSERT INTO `portfolio` (`id_portfolio`, `nama`, `deskripsi`, `tanggal`, `foto`) VALUES
+(1, 'coba', 'coba', '2022-08-10 10:34:00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimoni`
+--
+
+CREATE TABLE `testimoni` (
+  `id_testimoni` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `id_jabatan` int(11) NOT NULL,
+  `foto` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `testimoni`
+--
+
+INSERT INTO `testimoni` (`id_testimoni`, `nama`, `deskripsi`, `id_jabatan`, `foto`) VALUES
+(1, 'Muhammad Zahran', 'tes', 9, '');
 
 -- --------------------------------------------------------
 
@@ -175,33 +233,29 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `level`, `foto`) VALUES
-(1, 'Naufal Ulinnuha', 'naufal', '21232f297a57a5a743894a0e4a801fc3', 'superadmin', '1.png'),
-(2, 'Luthfiyah', 'luthfi', 'e10adc3949ba59abbe56e057f20f883e', 'superadmin', ''),
-(3, 'Zahran', 'zahran', 'e10adc3949ba59abbe56e057f20f883e', 'superadmin', ''),
-(4, 'Dena', 'dena', 'e10adc3949ba59abbe56e057f20f883e', 'admin', ''),
-(5, 'Putra', 'putra', 'e10adc3949ba59abbe56e057f20f883e', 'admin', ''),
-(6, 'Nevian', 'nevian', 'e10adc3949ba59abbe56e057f20f883e', 'admin', ''),
-(7, 'Misaka', 'misaka', '9c5fa085ce256c7c598f6710584ab25d', 'admin', '7.png');
+(3, 'Muhammad Zahran', 'Muhammad Zahran', 'e00cf25ad42683b3df678c61f42c6bda', 'superadmin', '3.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `varian`
+-- Table structure for table `wilayah`
 --
 
-CREATE TABLE `varian` (
-  `id_varian` int(11) NOT NULL,
-  `varian` varchar(50) NOT NULL
+CREATE TABLE `wilayah` (
+  `id_wilayah` int(11) NOT NULL,
+  `wilayah` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `varian`
+-- Dumping data for table `wilayah`
 --
 
-INSERT INTO `varian` (`id_varian`, `varian`) VALUES
-(1, 'Coffe'),
-(2, 'Non-coffe'),
-(3, 'Tea');
+INSERT INTO `wilayah` (`id_wilayah`, `wilayah`) VALUES
+(1, 'Jakarta Pusat'),
+(2, 'Jakarta Barat'),
+(3, 'Jakarta Timur'),
+(4, 'Jakarta Selatan'),
+(5, 'Jakarta Utara');
 
 --
 -- Indexes for dumped tables
@@ -214,31 +268,55 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`id_about`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id_contact`);
+
+--
+-- Indexes for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  ADD PRIMARY KEY (`id_jabatan`);
+
+--
+-- Indexes for table `karyawan`
+--
+ALTER TABLE `karyawan`
+  ADD PRIMARY KEY (`id_karyawan`),
+  ADD KEY `id_varian` (`id_jabatan`);
+
+--
 -- Indexes for table `kota`
 --
 ALTER TABLE `kota`
   ADD PRIMARY KEY (`id_kota`);
 
 --
--- Indexes for table `menu`
+-- Indexes for table `pasar`
 --
-ALTER TABLE `menu`
-  ADD PRIMARY KEY (`id_menu`),
-  ADD KEY `id_varian` (`id_varian`);
+ALTER TABLE `pasar`
+  ADD PRIMARY KEY (`id_pasar`),
+  ADD KEY `id_wilayah` (`id_wilayah`);
 
 --
--- Indexes for table `promo`
+-- Indexes for table `pesan`
 --
-ALTER TABLE `promo`
-  ADD PRIMARY KEY (`id_promo`),
-  ADD KEY `id_menu` (`id_menu`);
+ALTER TABLE `pesan`
+  ADD PRIMARY KEY (`id_pesan`);
 
 --
--- Indexes for table `store`
+-- Indexes for table `portfolio`
 --
-ALTER TABLE `store`
-  ADD PRIMARY KEY (`id_store`),
-  ADD KEY `id_kota` (`id_kota`);
+ALTER TABLE `portfolio`
+  ADD PRIMARY KEY (`id_portfolio`);
+
+--
+-- Indexes for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  ADD PRIMARY KEY (`id_testimoni`),
+  ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
 -- Indexes for table `user`
@@ -247,10 +325,10 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `varian`
+-- Indexes for table `wilayah`
 --
-ALTER TABLE `varian`
-  ADD PRIMARY KEY (`id_varian`);
+ALTER TABLE `wilayah`
+  ADD PRIMARY KEY (`id_wilayah`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -260,65 +338,89 @@ ALTER TABLE `varian`
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
-  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `karyawan`
+--
+ALTER TABLE `karyawan`
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT for table `pasar`
 --
-ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+ALTER TABLE `pasar`
+  MODIFY `id_pasar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `promo`
+-- AUTO_INCREMENT for table `pesan`
 --
-ALTER TABLE `promo`
-  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `pesan`
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `store`
+-- AUTO_INCREMENT for table `portfolio`
 --
-ALTER TABLE `store`
-  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `portfolio`
+  MODIFY `id_portfolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `varian`
+-- AUTO_INCREMENT for table `wilayah`
 --
-ALTER TABLE `varian`
-  MODIFY `id_varian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `wilayah`
+  MODIFY `id_wilayah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `menu`
+-- Constraints for table `karyawan`
 --
-ALTER TABLE `menu`
-  ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`id_varian`) REFERENCES `varian` (`id_varian`) ON UPDATE CASCADE;
+ALTER TABLE `karyawan`
+  ADD CONSTRAINT `karyawan_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `promo`
+-- Constraints for table `pasar`
 --
-ALTER TABLE `promo`
-  ADD CONSTRAINT `promo_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id_menu`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `pasar`
+  ADD CONSTRAINT `pasar_ibfk_1` FOREIGN KEY (`id_wilayah`) REFERENCES `wilayah` (`id_wilayah`);
 
 --
--- Constraints for table `store`
+-- Constraints for table `testimoni`
 --
-ALTER TABLE `store`
-  ADD CONSTRAINT `store_ibfk_1` FOREIGN KEY (`id_kota`) REFERENCES `kota` (`id_kota`) ON UPDATE CASCADE;
+ALTER TABLE `testimoni`
+  ADD CONSTRAINT `testimoni_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
