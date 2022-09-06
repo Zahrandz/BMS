@@ -53,7 +53,7 @@
         $f = $portfolio->tampil_id($i)["foto"];
         $n = $portfolio->tampil_id($i)["nama"];
         if (!empty($f)) {
-          unlink("../assets/images/portfolio/$f");
+          unlink("assets/images/portfolio/$f");
         }
         $portfolio->hapus($i);
         $success = $n." berhasil dihapus";

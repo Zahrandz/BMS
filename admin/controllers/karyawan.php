@@ -55,7 +55,7 @@
         $f = $karyawan->tampil_id($i)["foto"];
         $n = $karyawan->tampil_id($i)["nama"];
         if (!empty($f)) {
-          unlink("../assets/images/karyawan/$f");
+          unlink("assets/images/karyawan/$f");
         }
         $karyawan->hapus($i);
         $success = $n." berhasil dihapus";

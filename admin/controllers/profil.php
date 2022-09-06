@@ -40,4 +40,6 @@
   }
 
 	$profil = $user->tampil_id($_SESSION['id']);
+  $nama = $profil["nama"];
+  $username = $profil["username"];
 ?>

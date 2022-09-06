@@ -32,7 +32,7 @@ class pesan{
         $update->bindParam(2, $email);
         $update->bindParam(3, $pesan);
         $update->bindParam(4, $tanggal);
-        $update->bindParam(5, $id);
+        $update->bindParam(5, $id_pesan);
         $update->execute();
         return $update;
     }

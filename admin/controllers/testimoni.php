@@ -55,7 +55,7 @@
         $f = $testimoni->tampil_id($i)["foto"];
         $n = $testimoni->tampil_id($i)["nama"];
         if (!empty($f)) {
-          unlink("../assets/images/testimoni/$f");
+          unlink("assets/images/testimoni/$f");
         }
         $testimoni->hapus($i);
         $success = $n." berhasil dihapus";

@@ -29,7 +29,7 @@
       if (!$cek) {
         $jabatan->hapus($i);
         $success = " Data Jabatan berhasil dihapus";
-      } else {$error = "Jabatan sedang digunakan oleh ".count($cek)." menu";}
+      } else {$error = "Jabatan sedang digunakan oleh ".count($cek)." karyawan";}
     }
   } 
 
