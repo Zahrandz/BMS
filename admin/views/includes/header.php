@@ -2,8 +2,9 @@
     <nav class="navbar top-navbar navbar-expand-md navbar-dark">
         <div class="navbar-header">
             <a class="navbar-brand">
-                <!-- Logo icon --><b>
-                    <img src="" alt="homepage" class="dark-logo" />
+                <!-- Logo icon -->
+                <b>
+                    <img src="assets/images/logo2.png" alt="homepage" class="dark-logo" height="30" />
                 </b>
             </a>
         </div>
@@ -26,11 +27,13 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/<?= $foto ?>" alt="user" class="img-circle" width="30"></a>
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/images/users/<?= $foto ?>" alt="user" class="img-circle img-cover" width="30" height="30">
+                    </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                         <span class="with-arrow"><span class="bg-primary"></span></span>
                         <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
-                            <div class=""><img src="assets/images/users/<?= $foto ?>" alt="user" class="img-circle" width="60"></div>
+                            <div class=""><img src="assets/images/users/<?= $foto ?>" alt="user" class="img-circle img-cover" width="60" height="60"></div>
                             <div class="m-l-10">
                                 <h4 class="m-b-0"><?= $nama ?></h4>
 

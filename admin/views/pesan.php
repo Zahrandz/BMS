@@ -55,7 +55,7 @@
                                     <td><?= $nama ?></td>
                                     <td><?= $email ?></td>
                                     <td><?= $pesan ?></td>
-                                    <td><?= date_format(date_create($tanggal),"d F Y H:i"); ?></td>
+                                    <td style="min-width: 200px;"><?= date_format(date_create($tanggal),"d F Y H:i"); ?></td>
                                     <td align="center">
                                         <button type="button" class="btn btn-s btn-warning" title="Edit" data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_pesan ?>)"><i class="fa fa-pencil"></i></button>
                                         <p id="<?= $id_pesan ?>" class="d-none"><?php echo $nama.'|'.$email.'|'.$pesan.'|'.$tanggal ?></p>
@@ -83,27 +83,27 @@
                 <form class="forms-sample" method="post">
                     <div class="form-group">
                         <div class="row m-0">
-                            <div class="col-7 p-0 pr-2">
+                            <div class="col-7">
                                 <label for="nama">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
                             </div>
-                            <div class="col-7 p-0 pr-2">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email..." required>
+                            <div class="col-5">
+                                <label for="tanggal">Tanggal</label>
+                                <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal..." required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-12 p-0">
-                            <Label for="pesan">Pesan</Label>
-                            <input type="text" class="form-control" id="pesan" name="pesan" placeholder="Pesan..." required>
-                        </div>
+                        <div class="col-12">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email..." required>
+                        </div>    
                     </div>
                     <div class="form-group">
-                                <div class="col-6 p-0 pr-2">
-                                    <label for="tanggal">Tanggal</label>
-                                    <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal..." required>
-                                </div>
+                        <div class="col-12">
+                            <Label for="pesan">Pesan</Label>
+                            <textarea class="form-control" id="pesan" rows="5" name="pesan" placeholder="Pesan..." required></textarea>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -129,27 +129,27 @@
                     <input type="hidden" class="d-none" id="ei" name="id_pesan">
                     <div class="form-group">
                         <div class="row m-0">
-                            <div class="col-7 p-0 pr-2">
+                            <div class="col-7">
                                 <label for="nama">Nama</label>
                                 <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
                             </div>
-                            <div class="col-7 p-0 pr-2">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="ea" name="email" placeholder="Email..." required>
+                            <div class="col-5">
+                                <label for="tanggal">Tanggal</label>
+                                <input type="datetime-local" class="form-control" id="ev" name="tanggal" placeholder="Tanggal..." required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-12 p-0">
-                            <Label for="pesan">Pesan</Label>
-                            <input type="text" class="form-control" id="el" name="pesan" placeholder="Pesan..." required>
-                        </div>
+                        <div class="col-12">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="ea" name="email" placeholder="Email..." required>
+                        </div>   
                     </div>
                     <div class="form-group">
-                                <div class="col-6 p-0 pr-2">
-                                    <label for="tanggal">Tanggal</label>
-                                    <input type="datetime-local" class="form-control" id="ev" name="tanggal" placeholder="Tanggal..." required>
-                                </div>
+                        <div class="col-12">
+                            <Label for="pesan">Pesan</Label>
+                            <textarea class="form-control" id="el" rows="5" name="pesan" placeholder="Pesan..." required></textarea>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

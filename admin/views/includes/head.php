@@ -21,4 +21,5 @@
 
     <style type="text/css">
         td {vertical-align: middle !important; padding: 12px !important;}
+        .img-cover {object-fit: cover;}
     </style>

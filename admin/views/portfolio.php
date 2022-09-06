@@ -81,33 +81,30 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">
-                        <form class="forms-sample" method="post">
-                    <div class="form-group">
-                        <div class="row m-0">
-                            <div class="col-7 p-0 pr-2">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
-                            </div>
-                            <div class="col-12 p-0">
-                                <label for="deskripsi">Deskripsi</label>
-                                <input type="text" class="form-control"  rows="5" id="deskripsi" name="deskripsi" placeholder="Deskripsi..." required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                                <div class="col-6 p-0 pr-2">
-                                    <label for="tanggal">Tanggal</label>
-                                    <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal..." required>
+                            <form class="forms-sample" method="post">
+                                <div class="form-group row">
+                                    <div class="col-6">
+                                        <label for="nama">Nama</label>
+                                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="tanggal">Tanggal</label>
+                                        <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal..." required>
+                                    </div>
                                 </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success" name="submit-tambah">
-                            <i class="fa fa-check"></i><span> Submit</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
+                                <div class="form-group">    
+                                    <div class="col-12 p-0">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <textarea class="form-control" rows="5" id="deskripsi" name="deskripsi" placeholder="Deskripsi..." required></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-success" name="submit-tambah">
+                                        <i class="fa fa-check"></i><span> Submit</span>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -121,31 +118,29 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">
-                        <form class="forms-sample" method="post">
-                    <input type="hidden" class="d-none" id="ei" name="id_portfolio">
-                    <div class="form-group">
-                        <div class="row m-0">
-                            <div class="col-7 p-0 pr-2">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
-                            </div>
-                            <div class="col-7 p-0 pr-2">
-                                <label for="deskripsi">Deskripsi</label>
-                                <input type="text" class="form-control" rows="5" id="ev" name="deskripsi" placeholder="Deskripsi..." required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                                <div class="col-6 p-0 pr-2">
-                                    <label for="tanggal">Tanggal</label>
-                                    <input type="datetime-local" class="form-control" id="ea" name="tanggal" placeholder="Tanggal..." required>
+                            <form class="forms-sample" method="post">
+                                <input type="hidden" class="d-none" id="ei" name="id_portfolio">
+                                <div class="form-group row">
+                                    <div class="col-6">
+                                        <label for="nama">Nama</label>
+                                        <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="tanggal">Tanggal</label>
+                                        <input type="datetime-local" class="form-control" id="ea" name="tanggal" placeholder="Tanggal..." required>
+                                    </div>
                                 </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success" name="submit-edit"><i class="fa fa-check"></i><span> Submit</span></button>
-                    </div>
-                </form>
+                                <div class="form-group">
+                                    <div class="col-12 p-0">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <textarea class="form-control" rows="5" id="ev" name="deskripsi" placeholder="Deskripsi..." required></textarea>
+                                    </div>    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-success" name="submit-edit"><i class="fa fa-check"></i><span> Submit</span></button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -204,11 +199,7 @@
                 document.getElementById("ei").value = id;
                 document.getElementById("en").value = data[0];
                 document.getElementById("ea").value = data[2];
-                for (var i = 0; i < document.getElementsByClassName("ev").length ; i++) {
-                  if (document.getElementsByClassName("ev")[i].value==data[1]) {
-                    document.getElementsByClassName("ev")[i].selected = "true";
-                  }
-                }
+                document.getElementById("ev").value = data[1];
               }
               function foto(id){
                 var data = (document.getElementById(id).textContent).split("|");

@@ -79,22 +79,20 @@
             </div>
             <div class="modal-body">
                 <form class="forms-sample" method="post">
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
+                        </div>  
+                        <div class="col-6">
+                            <Label for="phone">Phone</Label>
+                            <input type="number" class="form-control" id="phone" name="phone" placeholder="Masukkan Nomor Handphone" required>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-12 p-0">
                             <Label for="alamat">Alamat</Label>
                             <textarea type="text" class="form-control" rows="3" id="alamat" name="alamat" placeholder="Masukkan Alamat" required></textarea>
-                        </div>
-                        <div class="row m-0">
-                            <div class="col-12 p-0">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-7 p-0 pr-2">
-                            <Label for="phone">phone</Label>
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Masukkan Nomor Handphone" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -118,25 +116,21 @@
             </div>
             <div class="modal-body">
                 <form class="forms-sample" method="post">
-                    <input type="hidden" class="d-none" id="ei" name="id_Contact">
+                    <input type="hidden" class="d-none" id="ei" name="id_contact">
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="en" name="email" placeholder="Email..." required>
+                        </div>
+                        <div class="col-6">
+                            <Label for="phone">Phone</Label>
+                            <input type="number" class="form-control" id="el" name="phone" placeholder="Phone..." required>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-12 p-0">
                             <Label for="alamat">Alamat</Label>
                             <textarea type="text" class="form-control" rows="3" id="ea" name="alamat" placeholder="Alamat..." required></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row m-0">
-                            <div class="col-12 p-0">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="en" name="email" placeholder="Email..." required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-7 p-0 pr-2">
-                            <Label for="phone">Phone</Label>
-                            <input type="text" class="form-control" id="el" name="phone" placeholder="Phone..." required>
                         </div>
                     </div>
                     <div class="modal-footer">

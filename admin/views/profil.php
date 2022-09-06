@@ -19,8 +19,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <center class="m-t-30">
-                                    <div class="img-circle row" style="background-image: url(assets/images/users/<?= $foto ?>);width: 150px; height: 150px; background-size: cover;">
-                                        <button type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#foto" style="margin-top: auto;margin-left: auto;"><i class="fa fa-pencil"></i> </button>
+                                    <div class="img-circle row" style="background-image: url(assets/images/users/<?= $foto ?>);width: 150px; height: 150px; background-size: cover; background-position: center;">
+                                        <button type="button" class="btn btn-info btn-circle mt-auto ml-auto" data-toggle="modal" data-target="#foto"><i class="fa fa-pencil"></i> </button>
                                     </div>
                                     <h4 class="card-title m-t-10"><?= $nama ?></h4>
                                     <h6 class="card-subtitle"><?= ucfirst($level) ?></h6>
