@@ -24,6 +24,15 @@ class contact{
         $data = $show->fetchAll();
         return $data;
     }
+
+    public function tampil_id($id)
+    {
+        $show = $this->db->prepare("SELECT * FROM `contact` WHERE `id_contact`=?");
+        $show->bindParam(1, $id);
+        $show->execute();
+        $data = $show->fetch();
+        return $data;
+    }
  
     public function ubah($id_contact,$alamat,$email,$phone){
         $update = $this->db->prepare('UPDATE `contact` SET `alamat`=?, `email`=?, `phone`=? WHERE `id_contact`=?');

@@ -49,12 +49,12 @@
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
                                                 <td>
-                                                    <img src="../assets/images/about/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
+                                                    <img src="../assets/img/about/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
                                                     <?= $judul ?>
-                                                <td><?= $deskripsi ?></td>
+                                                <td id="isi<?= $id_about ?>"><?= $deskripsi ?></td>
                                                 <td align="center">
                                                     <button type="button" class="btn btn-s btn-warning" title="Edit" data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_about ?>)"><i class="fa fa-pencil"></i></button>
-                                                    <p id="<?= $id_about ?>" class="d-none"><?php echo $judul.'|'.$deskripsi?></p>
+                                                    <p id="<?= $id_about ?>" class="d-none"><?php echo $judul; ?></p>
                                                     <button type="button" class="btn btn-s btn-info" title="Edit foto" data-toggle="modal" data-target="#foto" onclick="foto(<?= $id_about ?>)"><i class="fa fa-camera"></i></button>
                                                     <button type="button" class="btn btn-s btn-danger" title="Hapus" data-toggle="modal" data-target="#hapus" onclick="hapus(<?= $id_about ?>)"><i class="fa fa-trash"></i></button>
                                                 </td>
@@ -126,7 +126,7 @@
                               <div class="row m-0">
                                 <div class="col-12 p-0">
                                     <label for="deskripsi">Deskripsi</label>
-                                    <textarea class="form-control" rows="5" id="ed" name="deskripsi" placeholder="Deskripsi..." required></textarea>
+                                    <textarea class="form-control" rows="10" id="ed" name="deskripsi" placeholder="Deskripsi..." required></textarea>
                                 </div>
                               </div>
                             </div>
@@ -192,7 +192,7 @@
                 var data = (document.getElementById(id).textContent).split("|");
                 document.getElementById("ei").value = id;
                 document.getElementById("en").value = data[0];
-                document.getElementById("ed").value = data[1];
+                document.getElementById("ed").value = document.getElementById("isi"+id).innerHTML;
                 for (var i = 0; i < document.getElementsByClassName("ev").length ; i++) {
                   if (document.getElementsByClassName("ev")[i].value==data[2]) {
                     document.getElementsByClassName("ev")[i].selected = "true";

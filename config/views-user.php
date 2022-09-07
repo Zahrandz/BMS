@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <?php include("views/includes/head.php")?>
+  <?php include("views/includes/head.php")?>
 </head>
-<body class="animsition">
-    
-    <!-- Header -->
-    <header>
-        <?php include("views/includes/header.php")?>
-    </header>
-        
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <?php include("views/section/topbar.php")?>
+
+  <!-- ======= Header ======= -->
+  <?php include("views/includes/header.php")?>
+
+  <?php if($page=="home"){include("views/section/hero.php");} ?>
+
+  <main id="main">
     <?php include("views/$page.php"); ?>
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg3  p-b-32">
-        <?php include("views/includes/footer.php")?>
-    </footer>
+  <!-- ======= Footer ======= -->
+  <?php include("views/includes/footer.php")?>
+  <!-- End Footer -->
 
-    <!-- Back to top -->
-    <div class="btn-back-to-top" id="myBtn">
-        <span class="symbol-btn-back-to-top">
-            <i class="zmdi zmdi-chevron-up"></i>
-        </span>
-    </div>
-    
-    <?php include("views/includes/script.php")?>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <?php include("views/includes/script.php")?>
+
 </body>
+
 </html>

@@ -1,70 +1,38 @@
-<!-- Header desktop -->
-<div class="container-menu-desktop" style="height:70px">
-	<div class="wrap-menu-desktop" style="background-color:white">
-		<nav class="limiter-menu-desktop container" style="background-color:white">
-			
-			<!-- Logo desktop -->		
-			<a href="home" class="logo">
-				<img src="assets/images/icons/" alt="IMG-LOGO">
-			</a>
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
 
-			<!-- Menu desktop -->
-			<div class="menu-desktop" style="margin-left:500px">
-				<ul class="main-menu">
-					<li class="<?php if($page=='home'){echo 'active-menu';} ?>">
-						<a href="home">Home</a>
-					</li>
-					<li class="<?php if($page=='portfolio'){echo 'active-menu';} ?>">
-						<a href="portfolio">Portfolio</a>
-					</li>
-					<!-- <li class="<?php if($page=='promo'){echo 'active-menu';} ?>">
-						<a href="promo">Promo</a>
-					</li> -->
-					<li class="<?php if($page=='contact'){echo 'active-menu';} ?>">
-						<a href="contact">Contact Us</a>
-					</li>
-					<li class="<?php if($page=='about'){echo 'active-menu';} ?>">
-						<a href="about">About Us</a>
-					</li>
-				</ul>
-			</div>
+      <h1 class="logo"><a href="index.html">BizLand<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
 
-		</nav>
-	</div>	
-</div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
-<!-- Header Mobile -->
-<div class="wrap-header-mobile">
-	<!-- Logo moblie -->		
-	<div class="logo-mobile">
-		<a href="home"><img src="assets/images/icons/logo.png" alt="IMG-LOGO"></a>
-	</div>
-
-	<!-- Button show menu -->
-	<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-		<span class="hamburger-box">
-			<span class="hamburger-inner"></span>
-		</span>
-	</div>
-</div>
-
-<!-- Menu Mobile -->
-<div class="menu-mobile">
-	<ul class="main-menu-m">
-		<li>
-			<a href="home">Home</a>
-		</li>
-		<li>
-			<a href="menu">Menu</a>
-		</li>
-		<li>
-			<a href="promo">Promo</a>
-		</li>
-		<li>
-			<a href="store">Store Location</a>
-		</li>
-		<li>
-			<a href="about">About</a>
-		</li>
-	</ul>
-</div>
+    </div>
+  </header>

@@ -41,11 +41,11 @@
                                             <?php
                                                 $no=1;
                                                 foreach($data_karyawan as $row) {
-                                                    $id_karyawan    = $row['id_karyawan'];
-                                                    $nama       = $row['nama'];
-                                                    $alamat     = $row['alamat'];
+                                                    $id_karyawan = $row['id_karyawan'];
+                                                    $nama        = $row['nama'];
+                                                    $alamat      = $row['alamat'];
                                                     $id_jabatan  = $row['id_jabatan'];
-                                                    $foto       = $row['foto'];
+                                                    $foto        = $row['foto'];
                                                     if (empty($foto)) {$foto="default.png";}
                                                     $nj         = $jabatan->tampil_id($id_jabatan)["jabatan"]
                                             ?>
@@ -53,7 +53,7 @@
                                             <td class="text-center"><?= $no ?></td>
                                                <!--  <td><?= $nama ?></td> -->
                                                 <td>
-                                                    <img src="assets/images/karyawan/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
+                                                    <img src="../assets/img/karyawan/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
                                                     <?= $nama ?>
                                                 </td>
                                                 <td><?= $alamat ?></td>

@@ -86,7 +86,7 @@
                         </div>  
                         <div class="col-6">
                             <Label for="phone">Phone</Label>
-                            <input type="number" class="form-control" id="phone" name="phone" placeholder="Masukkan Nomor Handphone" required>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Masukkan Nomor Handphone" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -124,7 +124,7 @@
                         </div>
                         <div class="col-6">
                             <Label for="phone">Phone</Label>
-                            <input type="number" class="form-control" id="el" name="phone" placeholder="Phone..." required>
+                            <input type="text" class="form-control" id="el" name="phone" placeholder="Phone..." required>
                         </div>
                     </div>
                     <div class="form-group">

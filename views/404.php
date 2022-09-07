@@ -1,18 +1,11 @@
+<section id="404" class="section-bg">
+      <div class="container" data-aos="fade-up">
 
-	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92 m-t-80" style="background-image: url('assets/images/bg2.jpg');">
-		<h2 class="ltext-105 cl0 txt-center">
-			404 <br> Page not found
-		</h2>
-	</section>	
+        <div class="section-title">
+          <h2>404</h2>
+          <h3>Page <span>Not Found</span></h3>
+          <p>Please go back</p>
+        </div>
 
-	<!-- Content page -->
-	<section style="margin-bottom: 150px">
-		<div class="container">
-			<div class="flex-c-m flex-w w-full p-t-25">
-				<button onclick="history.back()" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Go Back
-				</button>
-			</div>
-		</div>
-	</section>
+      </div>
+    </section>
