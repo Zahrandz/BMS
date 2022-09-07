@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://www.wrappixel.com/templates/elegant-admin-lite/" />
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo3.png">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">

@@ -1,6 +1,6 @@
 <aside class="left-sidebar">
     <div class="d-flex no-block nav-text-box align-items-center">
-        <span><img src="assets/images/logo2.png" alt="sidebar" height="30"></span>
+        <span><img src="assets/images/logo3.png" alt="sidebar" height="30"></span>
         <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i
                 class="ti-menu"></i></a>
         <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i

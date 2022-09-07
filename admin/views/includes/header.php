@@ -4,7 +4,7 @@
             <a class="navbar-brand">
                 <!-- Logo icon -->
                 <b>
-                    <img src="assets/images/logo2.png" alt="homepage" class="dark-logo" height="30" />
+                    <img src="assets/images/logo3.png" alt="homepage" class="dark-logo" height="30" />
                 </b>
             </a>
         </div>
