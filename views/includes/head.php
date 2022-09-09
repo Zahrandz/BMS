@@ -22,3 +22,5 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="assets/js/sweetalert.min.js"></script>

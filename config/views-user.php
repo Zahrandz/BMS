@@ -6,9 +6,15 @@
 </head>
 
 <body>
+  <script>
+    <?php 
+      if (isset($success)){ echo "swal('Berhasil', '$success', 'success');"; } 
+      if (isset($error))  { echo "swal('Error!', '$error', 'error');"; } 
+    ?>
+  </script>
 
   <!-- ======= Top Bar ======= -->
-  <?php include("views/section/topbar.php")?>
+  <?php //include("views/section/topbar.php")?>
 
   <!-- ======= Header ======= -->
   <?php include("views/includes/header.php")?>

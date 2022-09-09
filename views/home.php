@@ -1,14 +1,12 @@
-		<!-- ======= Featured Services Section ======= -->
-    <?php include("views/section/featured-services.php")?>
 
     <!-- ======= About Section ======= -->
     <?php include("views/section/about.php")?>
 
-    <!-- ======= Services Section ======= -->
-    <?php include("views/section/services.php")?>
-
     <!-- ======= Testimonials Section ======= -->
     <?php include("views/section/testimonials.php")?>
+
+    <!-- ======= Portfolio Section ======= -->
+    <?php include("views/section/portfolio.php")?>
 
     <!-- ======= Team Section ======= -->
     <?php include("views/section/team.php")?>

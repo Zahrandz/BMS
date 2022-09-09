@@ -4,11 +4,15 @@
     require("admin/models/jabatan.php");
     require("admin/models/karyawan.php");
     require("admin/models/pesan.php");
+    require("admin/models/portfolio.php");
+    require("admin/models/testimoni.php");
     $about = new about();
     $contact = new contact();
     $jabatan = new jabatan();
     $karyawan = new karyawan();
     $pesan = new pesan();
+    $portfolio = new portfolio();
+    $testimoni = new testimoni();
     
     /* Tambah */ 
     if (isset($_POST["submit-tambah"])) {
@@ -18,9 +22,9 @@
         $p = $_POST["pesan"];
         $t = date("Y-m-d H:i:s");
         $pesan->tambah($n,$e,$p,$t);
-        $success = "Pesan berhasil ditambahkan";
-        }else {
-            $error = "Data Pesan wajib diisi!";
-        }
+        $success = "Pesan berhasil dikirim";
+      }else {
+        $error = "Data Pesan wajib diisi!";
+      }
     }
 ?>

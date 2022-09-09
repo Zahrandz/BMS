@@ -199,7 +199,7 @@
   /**
    * Testimonials slider
    */
-  new Swiper('.testimonials-slider', {
+   new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
     autoplay: {
@@ -211,6 +211,16 @@
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 40
+      },
+
+      1200: {
+        slidesPerView: 3,
+      }
     }
   });
 
