@@ -2,3 +2,4 @@ options All -Indexes
 
 RewriteEngine On
 RewriteRule ^([-a-z]*)$ 	index.php?page=$1 [L]
+RewriteRule ^([-a-z]*)-([0-9]*)$ index.php?page=$1&id=$2 [L]

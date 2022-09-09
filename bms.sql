@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2022 at 05:24 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Sep 09, 2022 at 03:52 PM
+-- Server version: 10.4.20-MariaDB-log
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id_about`, `judul`, `deskripsi`, `foto`) VALUES
-(5, 'tes', 'tes', '5.png');
+(5, 'Voluptatem dignissimos provident quasi corporis vo', '<p class=\"fst-italic\">\r\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\r\n              magna aliqua.\r\n            </p>\r\n            <ul>\r\n              <li>\r\n                <i class=\"bx bx-store-alt\"></i>\r\n                <div>\r\n                  <h5>Ullamco laboris nisi ut aliquip consequat</h5>\r\n                  <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>\r\n                </div>\r\n              </li>\r\n              <li>\r\n                <i class=\"bx bx-images\"></i>\r\n                <div>\r\n                  <h5>Magnam soluta odio exercitationem reprehenderi</h5>\r\n                  <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>\r\n                </div>\r\n              </li>\r\n            </ul>\r\n            <p>\r\n              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\r\n              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\r\n              culpa qui officia deserunt mollit anim id est laborum\r\n            </p>', '5.png');
 
 -- --------------------------------------------------------
 
@@ -59,8 +59,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id_contact`, `alamat`, `email`, `phone`) VALUES
-(1, 'coba', 'asem baris', '1234567'),
-(8, 'tes', 'tes', '085780520632');
+(1, 'A108 Adam Street, New York, NY 535022', 'contact@example.com', '+1 5589 55488 55');
 
 -- --------------------------------------------------------
 
@@ -105,7 +104,10 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `nama`, `alamat`, `id_jabatan`, `foto`) VALUES
-(24, 'Muhammad Zahran Dziqriansyah', 'Jl. Al Barkah RT 03 RW 09 No. 58 Jatijajar Tapos Depok', 9, '24.png');
+(24, 'Muhammad Zahran Dziqriansyah', 'Jl. Al Barkah RT 03 RW 09 No. 58 Jatijajar Tapos Depok', 9, '24.png'),
+(28, 'Walter White', 'Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.', 7, '28.png'),
+(29, 'Sarah Jhonson', 'Magni Dolores Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia', 13, '29.png'),
+(30, 'William Anderson', 'Nemo Enim At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis', 10, '30.png');
 
 -- --------------------------------------------------------
 
@@ -169,7 +171,8 @@ CREATE TABLE `pesan` (
 --
 
 INSERT INTO `pesan` (`id_pesan`, `nama`, `email`, `pesan`, `tanggal`) VALUES
-(7, 'coba', 'a', 'm', '2022-08-09 14:38:00');
+(1, 'coba', 'a', 'm', '2022-08-09 14:38:00'),
+(2, 'Naufal Ulinnuha', 'naufalulinnuha40@gmail.com', 'Hello World', '2022-09-09 19:48:23');
 
 -- --------------------------------------------------------
 
@@ -190,7 +193,12 @@ CREATE TABLE `portfolio` (
 --
 
 INSERT INTO `portfolio` (`id_portfolio`, `nama`, `deskripsi`, `tanggal`, `foto`) VALUES
-(1, 'coba', 'coba', '2022-08-10 10:34:00', '');
+(1, 'Portfolio 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus. ', '2022-08-10 10:34:00', '1.png'),
+(3, 'Portfolio 2', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', '2022-09-10 19:21:00', '3.png'),
+(4, 'Portfolio 3', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', '2022-09-09 20:22:00', '4.png'),
+(5, 'Portfolio 4', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', '2022-09-09 19:23:00', '5.png'),
+(6, 'Portfolio 5', 'Nullam augue nulla, lacinia in tellus a, rhoncus pellentesque elit. Quisque et mauris odio. In diam neque, laoreet eu metus vitae, tempor elementum sem. ', '2022-09-09 20:23:00', '6.png'),
+(7, 'Portfolio 6', 'Nulla posuere urna ac lectus iaculis rutrum. Mauris non placerat nibh. Maecenas eget odio ac enim euismod fringilla nec eu mi.', '2022-09-09 21:24:00', '7.png');
 
 -- --------------------------------------------------------
 
@@ -211,7 +219,10 @@ CREATE TABLE `testimoni` (
 --
 
 INSERT INTO `testimoni` (`id_testimoni`, `nama`, `deskripsi`, `id_jabatan`, `foto`) VALUES
-(1, 'Muhammad Zahran', 'tes', 9, '');
+(1, 'Muhammad Zahran', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus.', 9, ''),
+(3, 'Sara Wilson', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', 10, '3.png'),
+(4, 'Jena Karlis', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', 13, '4.png'),
+(5, 'Matt Brandon', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', 6, '5.png');
 
 -- --------------------------------------------------------
 
@@ -233,6 +244,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `level`, `foto`) VALUES
+(1, 'Naufal Ulinnuha', 'naufal', '21232f297a57a5a743894a0e4a801fc3', 'superadmin', ''),
 (3, 'Muhammad Zahran', 'Muhammad Zahran', 'e00cf25ad42683b3df678c61f42c6bda', 'superadmin', '3.png');
 
 -- --------------------------------------------------------
@@ -338,7 +350,7 @@ ALTER TABLE `wilayah`
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
-  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -356,7 +368,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `kota`
@@ -374,19 +386,19 @@ ALTER TABLE `pasar`
 -- AUTO_INCREMENT for table `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id_portfolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_portfolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
