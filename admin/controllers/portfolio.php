@@ -36,7 +36,7 @@
         $f_exp   = explode('.',$f_name);
         $f_ext   = end($f_exp);
         $n       = $i.".png";
-        $dir     = 'assets/images/portfolio/'.$n;
+        $dir     = '../assets/img/portfolio/'.$n;
         if(move_uploaded_file($f_tmp,$dir)){ 
           $portfolio->foto($i,$n);
           $success="Foto berhasil diupload";
@@ -53,7 +53,7 @@
         $f = $portfolio->tampil_id($i)["foto"];
         $n = $portfolio->tampil_id($i)["nama"];
         if (!empty($f)) {
-          unlink("assets/images/portfolio/$f");
+          unlink("../assets/img/portfolio/$f");
         }
         $portfolio->hapus($i);
         $success = $n." berhasil dihapus";

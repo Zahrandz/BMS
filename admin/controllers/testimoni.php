@@ -38,7 +38,7 @@
         $f_exp   = explode('.',$f_name);
         $f_ext   = end($f_exp);
         $n       = $i.".png";
-        $dir     = 'assets/images/testimoni/'.$n;
+        $dir     = '../assets/img/testimoni/'.$n;
         if(move_uploaded_file($f_tmp,$dir)){ 
           $testimoni->foto($i,$n);
           $success="Foto berhasil diupload";
@@ -55,7 +55,7 @@
         $f = $testimoni->tampil_id($i)["foto"];
         $n = $testimoni->tampil_id($i)["nama"];
         if (!empty($f)) {
-          unlink("assets/images/testimoni/$f");
+          unlink("../assets/img/testimoni/$f");
         }
         $testimoni->hapus($i);
         $success = $n." berhasil dihapus";

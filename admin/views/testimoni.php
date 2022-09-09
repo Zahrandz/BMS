@@ -53,7 +53,7 @@
                                             <td class="text-center"><?= $no ?></td>
                                                <!--  <td><?= $nama ?></td> -->
                                                 <td>
-                                                    <img src="assets/images/testimoni/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
+                                                    <img src="../assets/img/testimoni/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
                                                     <?= $nama ?>
                                                 </td>
                                                 <td><?= $deskripsi ?></td>

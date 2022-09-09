@@ -51,7 +51,7 @@
                                             <tr>
                                             <td class="text-center"><?= $no ?></td>
                                                 <td>
-                                                    <img src="assets/images/portfolio/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
+                                                    <img src="../assets/img/portfolio/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
                                                     <?= $nama ?>
                                                 </td>
                                                 <td><?= $deskripsi ?></td>
