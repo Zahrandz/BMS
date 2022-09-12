@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2022 at 03:52 PM
--- Server version: 10.4.20-MariaDB-log
--- PHP Version: 8.0.9
+-- Generation Time: Sep 12, 2022 at 05:14 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -184,6 +184,7 @@ CREATE TABLE `portfolio` (
   `id_portfolio` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `deskripsi` text NOT NULL,
+  `lokasi` varchar(50) NOT NULL,
   `tanggal` datetime NOT NULL,
   `foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -192,13 +193,14 @@ CREATE TABLE `portfolio` (
 -- Dumping data for table `portfolio`
 --
 
-INSERT INTO `portfolio` (`id_portfolio`, `nama`, `deskripsi`, `tanggal`, `foto`) VALUES
-(1, 'Portfolio 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus. ', '2022-08-10 10:34:00', '1.png'),
-(3, 'Portfolio 2', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', '2022-09-10 19:21:00', '3.png'),
-(4, 'Portfolio 3', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', '2022-09-09 20:22:00', '4.png'),
-(5, 'Portfolio 4', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', '2022-09-09 19:23:00', '5.png'),
-(6, 'Portfolio 5', 'Nullam augue nulla, lacinia in tellus a, rhoncus pellentesque elit. Quisque et mauris odio. In diam neque, laoreet eu metus vitae, tempor elementum sem. ', '2022-09-09 20:23:00', '6.png'),
-(7, 'Portfolio 6', 'Nulla posuere urna ac lectus iaculis rutrum. Mauris non placerat nibh. Maecenas eget odio ac enim euismod fringilla nec eu mi.', '2022-09-09 21:24:00', '7.png');
+INSERT INTO `portfolio` (`id_portfolio`, `nama`, `deskripsi`, `lokasi`, `tanggal`, `foto`) VALUES
+(1, 'Portfolio 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus. ', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', '2022-08-10 10:34:00', '1.png'),
+(3, 'Portfolio 2', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', '', '2022-09-10 19:21:00', '3.png'),
+(4, 'Portfolio 3', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', '', '2022-09-09 20:22:00', '4.png'),
+(5, 'Portfolio 4', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', '', '2022-09-09 19:23:00', '5.png'),
+(6, 'Portfolio 5', 'Nullam augue nulla, lacinia in tellus a, rhoncus pellentesque elit. Quisque et mauris odio. In diam neque, laoreet eu metus vitae, tempor elementum sem. ', '', '2022-09-09 20:23:00', '6.png'),
+(7, 'Portfolio 6', 'Nulla posuere urna ac lectus iaculis rutrum. Mauris non placerat nibh. Maecenas eget odio ac enim euismod fringilla nec eu mi.', '', '2022-09-09 21:24:00', '7.png'),
+(8, 'coba', 'coba', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', '2022-09-12 10:13:00', '');
 
 -- --------------------------------------------------------
 
@@ -392,7 +394,7 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id_portfolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_portfolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
