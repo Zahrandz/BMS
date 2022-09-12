@@ -90,15 +90,15 @@
                                         <label for="nama">Nama</label>
                                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
                                     </div>
-                                    <div class="form-group">
-                                    <div class="col-12 p-0">
-                                        <Label for="lokasi">Lokasi</Label>
-                                        <input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi..." required>
-                                    </div>
-                                </div>
                                     <div class="col-6">
                                         <label for="tanggal">Tanggal</label>
                                         <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal..." required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-12 p-0">
+                                        <Label for="lokasi">Lokasi</Label>
+                                        <input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi..." required>
                                     </div>
                                 </div>
                                 <div class="form-group">    
@@ -134,15 +134,15 @@
                                         <label for="nama">Nama</label>
                                         <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
                                     </div>
-                                    <div class="form-group">
-                                <div class="col-12 p-0">
-                                    <Label for="lokasi">Lokasi</Label>
-                                    <input type="text" class="form-control" id="ea" name="lokasi" placeholder="Lokasi..." required>
-                                </div>
-                            </div>
                                     <div class="col-6">
                                         <label for="tanggal">Tanggal</label>
                                         <input type="datetime-local" class="form-control" id="el" name="tanggal" placeholder="Tanggal..." required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-12 p-0">
+                                        <Label for="lokasi">Lokasi</Label>
+                                        <input type="text" class="form-control" id="ea" name="lokasi" placeholder="Lokasi..." required>
                                     </div>
                                 </div>
                                 <div class="form-group">

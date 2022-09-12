@@ -25,7 +25,11 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/<?= $porto["foto"] ?>" alt="">
+                  <?php
+                    $foto = $porto["foto"];
+                    if (empty($foto)) {$foto="default.png";}
+                  ?>
+                  <img src="assets/img/portfolio/<?= $foto ?>" alt="">
                 </div>
 
               </div>
@@ -41,10 +45,10 @@
                 <li><strong>Client</strong>: ASU Company</li> -->
                 <?php
                 	$tanggal      = $porto["tanggal"];
-                  	$tanggal2     = date_create("$tanggal");
+                  $tanggal2     = date_create("$tanggal");
                 ?>
                 <li><strong>Project date</strong>: <?= date_format($tanggal2,"d F Y") ?></li>
-                <!-- <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li> -->
+                <li><strong>Project Location</strong>: <a href='<?= $porto["lokasi"] ?>' target="_blank"><?= $porto["lokasi"] ?></a></li>
               </ul>
             </div>
             <div class="portfolio-description">

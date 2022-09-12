@@ -1,13 +1,13 @@
 
             <div class="container-fluid">
                 <!-- Row -->
-                <div class="row" style="width:800px;margin:auto;">
-                    <div class="col-lg-8 col-xlg-9 col-md-7" style="margin:auto;">
+                <div class="row m-auto col-lg-7">
+                    <div class="col-lg-8 col-xlg-9 col-md-7 m-auto">
                         <div class="card" style="background-color:floralwhite;border-radius:10px">
                             <!-- Tab panes -->
                             <div class="card-body" style="border:2px solid lightseagreen;border-radius:10px">
                                 <img src="assets/images/logo3.png" alt="homepage" class="dark-logo" style="display:block;margin:auto;height:45px"/>
-                                <h6 class="card-subtitle text-center" style="color:dimgray">sign in to start your session</h6>
+                                <h6 class="card-subtitle text-center mt-2" style="color:dimgray">sign in to start your session</h6>
                                 <br>
                                 <!-- <h6 class="card-subtitle text-danger">*Maaf username tidak boleh kosong!</h6> -->
 
