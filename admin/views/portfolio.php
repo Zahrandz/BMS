@@ -33,6 +33,7 @@
                                                 <th class="text-center">No</th>
                                                 <th style="width: 40%;">Nama</th>
                                                 <th style="width: 100%;">Deskripsi</th>
+                                                <th style="min-width: 100px;">Lokasi</th>
                                                 <th style="min-width: 100px;">Tanggal</th>
                                                 <th style="min-width: 110px;"><center>Option</center></th>
                                             </tr>
@@ -44,6 +45,7 @@
                                                     $id_portfolio    = $row['id_portfolio'];
                                                     $nama            = $row['nama'];
                                                     $deskripsi       = $row['deskripsi'];
+                                                    $lokasi          = $row['lokasi'];
                                                     $tanggal         = $row['tanggal'];
                                                     $foto            = $row['foto'];
                                                     if (empty($foto)) {$foto="default.png";}
@@ -55,10 +57,11 @@
                                                     <?= $nama ?>
                                                 </td>
                                                 <td><?= $deskripsi ?></td>
+                                                <td><a href="<?= $lokasi ?>" target="_blank"><?= $lokasi ?></a></td>
                                                 <td><?= date_format(date_create($tanggal),"d F Y H:i"); ?></td>
                                                 <td align="center">
                                                     <button type="button" class="btn btn-s btn-warning" title="Edit" data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_portfolio?>)"><i class="fa fa-pencil"></i></button>
-                                                    <p id="<?= $id_portfolio?>" class="d-none"><?php echo $nama.'|'.$deskripsi.'|'.$tanggal ?></p>
+                                                    <p id="<?= $id_portfolio?>" class="d-none"><?php echo $nama.'|'.$deskripsi.'|'.$lokasi.'|'.$tanggal ?></p>
                                                     <button type="button" class="btn btn-s btn-info" title="Edit foto" data-toggle="modal" data-target="#foto" onclick="foto(<?= $id_portfolio?>)"><i class="fa fa-camera"></i></button>
                                                     <button type="button" class="btn btn-s btn-danger" title="Hapus" data-toggle="modal" data-target="#hapus" onclick="hapus(<?= $id_portfolio?>)"><i class="fa fa-trash"></i></button>
                                                 </td>
@@ -87,6 +90,12 @@
                                         <label for="nama">Nama</label>
                                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
                                     </div>
+                                    <div class="form-group">
+                                    <div class="col-12 p-0">
+                                        <Label for="lokasi">Lokasi</Label>
+                                        <input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi..." required>
+                                    </div>
+                                </div>
                                     <div class="col-6">
                                         <label for="tanggal">Tanggal</label>
                                         <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal..." required>
@@ -125,9 +134,15 @@
                                         <label for="nama">Nama</label>
                                         <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
                                     </div>
+                                    <div class="form-group">
+                                <div class="col-12 p-0">
+                                    <Label for="lokasi">Lokasi</Label>
+                                    <input type="text" class="form-control" id="ea" name="lokasi" placeholder="Lokasi..." required>
+                                </div>
+                            </div>
                                     <div class="col-6">
                                         <label for="tanggal">Tanggal</label>
-                                        <input type="datetime-local" class="form-control" id="ea" name="tanggal" placeholder="Tanggal..." required>
+                                        <input type="datetime-local" class="form-control" id="el" name="tanggal" placeholder="Tanggal..." required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -199,6 +214,7 @@
                 document.getElementById("ei").value = id;
                 document.getElementById("en").value = data[0];
                 document.getElementById("ea").value = data[2];
+                document.getElementById("el").value = data[3];
                 document.getElementById("ev").value = data[1];
               }
               function foto(id){

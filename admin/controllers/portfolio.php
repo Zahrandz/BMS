@@ -4,11 +4,12 @@
     
     /* Tambah */ 
     if (isset($_POST["submit-tambah"])) {
-      if (!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["tanggal"])) {
+      if (!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["lokasi"])&&!empty($_POST["tanggal"])) {
         $n = $_POST["nama"];
         $d = $_POST["deskripsi"];
+        $l = $_POST["lokasi"];
         $t = $_POST["tanggal"];
-        $portfolio->tambah($n,$d,$t);
+        $portfolio->tambah($n,$d,$l,$t);
         $success = "Portfolio berhasil ditambahkan";
         }else {
             $error = "Data Portfolio wajib diisi!";
@@ -17,12 +18,13 @@
   
     /* Edit */
     if (isset($_POST["submit-edit"])) {
-      if (!empty($_POST["id_portfolio"])&&!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["tanggal"])) {
+      if (!empty($_POST["id_portfolio"])&&!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["lokasi"])&&!empty($_POST["tanggal"])) {
         $i = $_POST["id_portfolio"];
         $n = $_POST["nama"];
         $d = $_POST["deskripsi"];
+        $l = $_POST["lokasi"];
         $t = $_POST["tanggal"];
-          $portfolio->ubah($i,$n,$d,$t);
+          $portfolio->ubah($i,$n,$d,$l,$t);
           $success = "Data berhasil diedit";
       } 
     }
