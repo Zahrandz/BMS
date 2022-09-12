@@ -7,7 +7,7 @@
           <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="row d-none" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
@@ -23,6 +23,7 @@
           <?php
               $no=1;
               foreach($portfolio->tampil() as $row) {
+                  if($page=="home"&&$no>3){break;}
                   $id_portfolio = $row['id_portfolio'];
                   $nama         = $row['nama'];
                   $deskripsi    = $row['deskripsi'];

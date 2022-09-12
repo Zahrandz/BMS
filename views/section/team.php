@@ -11,6 +11,7 @@
 
           <?php
             foreach($karyawan->tampil() as $row) {
+              if($page=="home"&&$no>4){break;}
               $nama        = $row['nama'];
               $id_jabatan  = $row['id_jabatan'];
               $foto        = $row['foto'];
