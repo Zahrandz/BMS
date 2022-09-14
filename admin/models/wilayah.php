@@ -45,7 +45,7 @@
     }
 
     public function cek_hapus($id_wilayah){
-        $show = $this->db->prepare("SELECT * FROM pasar WHERE id_wilayah= ?");
+        $show = $this->db->prepare("SELECT * FROM portfolio WHERE id_wilayah= ?");
         $show->bindParam(1, $id_wilayah);
         $show->execute();
         return $show->fetchAll();

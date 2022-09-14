@@ -231,7 +231,11 @@
                 document.getElementById("ei").value = id;
                 document.getElementById("en").value = data[0];
                 document.getElementById("ea").value = data[2];
-                document.getElementById("el").value = data[3];
+                for (var i = 0; i < document.getElementsByClassName("el").length ; i++) {
+                  if (document.getElementsByClassName("el")[i].value==data[3]) {
+                    document.getElementsByClassName("el")[i].selected = "true";
+                  }
+                }
                 document.getElementById("ev").value = data[1];
               }
               function foto(id){

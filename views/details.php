@@ -44,11 +44,11 @@
                 <!-- <li><strong>Category</strong>: Web design</li>
                 <li><strong>Client</strong>: ASU Company</li> -->
                 <?php
-                	$tanggal      = $porto["tanggal"];
-                  $tanggal2     = date_create("$tanggal");
+                	$id_wilayah   = $porto['id_wilayah'];
+                  $nw           = $wilayah->tampil_id($id_wilayah)["wilayah"];
                 ?>
-                <li><strong>Project date</strong>: <?= date_format($tanggal2,"d F Y") ?></li>
-                <li><strong>Project Location</strong>: <a href='<?= $porto["lokasi"] ?>' target="_blank"><?= $porto["lokasi"] ?></a></li>
+                <li><strong>Project Location</strong>: <?= $nw ?></li>
+                <li><strong>URL Maps</strong>: <a href='<?= $porto["lokasi"] ?>' target="_blank"><?= $porto["lokasi"] ?></a></li>
               </ul>
             </div>
             <div class="portfolio-description">

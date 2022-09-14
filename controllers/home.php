@@ -6,6 +6,7 @@
     require("admin/models/pesan.php");
     require("admin/models/portfolio.php");
     require("admin/models/testimoni.php");
+    require("admin/models/wilayah.php");
     $about = new about();
     $contact = new contact();
     $jabatan = new jabatan();
@@ -13,6 +14,7 @@
     $pesan = new pesan();
     $portfolio = new portfolio();
     $testimoni = new testimoni();
+    $wilayah = new wilayah();
     
     /* Tambah */ 
     if (isset($_POST["submit-tambah"])) {

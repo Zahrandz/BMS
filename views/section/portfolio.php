@@ -27,8 +27,8 @@
                   $id_portfolio = $row['id_portfolio'];
                   $nama         = $row['nama'];
                   $deskripsi    = $row['deskripsi'];
-                  $tanggal      = $row['tanggal'];
-                  $tanggal2     = date_create("$tanggal");
+                  $id_wilayah   = $row['id_wilayah'];
+                  $nw           = $wilayah->tampil_id($id_wilayah)["wilayah"];
                   $foto         = $row['foto'];
                   if (empty($foto)) {$foto="default.png";}
           ?>
@@ -36,7 +36,7 @@
             <img src="assets/img/portfolio/<?= $foto ?>" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4><?= $nama ?></h4>
-              <p><?= date_format($tanggal2,"d F Y") ?></p>
+              <p><?= $nw ?></p>
               <a href="assets/img/portfolio/<?= $foto ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               <a href="details-<?= $id_portfolio ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>

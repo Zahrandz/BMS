@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2022 at 04:17 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Sep 14, 2022 at 08:04 PM
+-- Server version: 10.4.20-MariaDB-log
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -195,12 +195,12 @@ CREATE TABLE `portfolio` (
 
 INSERT INTO `portfolio` (`id_portfolio`, `nama`, `deskripsi`, `lokasi`, `id_wilayah`, `foto`) VALUES
 (1, 'Portfolio 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus. ', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', 1, '1.png'),
-(3, 'Portfolio 2', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', '', NULL, '3.png'),
-(4, 'Portfolio 3', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', '', NULL, '4.png'),
-(5, 'Portfolio 4', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', '', NULL, '5.png'),
-(6, 'Portfolio 5', 'Nullam augue nulla, lacinia in tellus a, rhoncus pellentesque elit. Quisque et mauris odio. In diam neque, laoreet eu metus vitae, tempor elementum sem. ', '', NULL, '6.png'),
-(7, 'Portfolio 6', 'Nulla posuere urna ac lectus iaculis rutrum. Mauris non placerat nibh. Maecenas eget odio ac enim euismod fringilla nec eu mi.', '', NULL, '7.png'),
-(8, 'coba', 'coba', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', NULL, '');
+(3, 'Portfolio 2', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', '', 2, '3.png'),
+(4, 'Portfolio 3', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', '', 3, '4.png'),
+(5, 'Portfolio 4', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', '', 4, '5.png'),
+(6, 'Portfolio 5', 'Nullam augue nulla, lacinia in tellus a, rhoncus pellentesque elit. Quisque et mauris odio. In diam neque, laoreet eu metus vitae, tempor elementum sem. ', '', 1, '6.png'),
+(7, 'Portfolio 6', 'Nulla posuere urna ac lectus iaculis rutrum. Mauris non placerat nibh. Maecenas eget odio ac enim euismod fringilla nec eu mi.', '', 2, '7.png'),
+(8, 'coba', 'coba', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', 2, '');
 
 -- --------------------------------------------------------
 
