@@ -1,15 +1,16 @@
 <?php
     require("models/portfolio.php");
+    require("models/wilayah.php");
     $portfolio = new portfolio();
-    
+    $wilayah = new wilayah();
     /* Tambah */ 
     if (isset($_POST["submit-tambah"])) {
-      if (!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["lokasi"])&&!empty($_POST["tanggal"])) {
+      if (!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["lokasi"])&&!empty($_POST["id_wilayah"])) {
         $n = $_POST["nama"];
         $d = $_POST["deskripsi"];
         $l = $_POST["lokasi"];
-        $t = $_POST["tanggal"];
-        $portfolio->tambah($n,$d,$l,$t);
+        $w = $_POST["id_wilayah"];
+        $portfolio->tambah($n,$d,$l,$w);
         $success = "Portfolio berhasil ditambahkan";
         }else {
             $error = "Data Portfolio wajib diisi!";
@@ -18,13 +19,13 @@
   
     /* Edit */
     if (isset($_POST["submit-edit"])) {
-      if (!empty($_POST["id_portfolio"])&&!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["lokasi"])&&!empty($_POST["tanggal"])) {
+      if (!empty($_POST["id_portfolio"])&&!empty($_POST["nama"])&&!empty($_POST["deskripsi"])&&!empty($_POST["lokasi"])&&!empty($_POST["id_wilayah"])) {
         $i = $_POST["id_portfolio"];
         $n = $_POST["nama"];
         $d = $_POST["deskripsi"];
         $l = $_POST["lokasi"];
-        $t = $_POST["tanggal"];
-          $portfolio->ubah($i,$n,$d,$l,$t);
+        $w = $_POST["id_wilayah"];
+          $portfolio->ubah($i,$n,$d,$l,$w);
           $success = "Data berhasil diedit";
       } 
     }
@@ -63,4 +64,5 @@
     } 
   
     $data_portfolio = $portfolio->tampil();
+    $data_wilayah   = $wilayah->tampil();
 ?>

@@ -50,7 +50,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="jabatan">Position<i class="fa fa-handshake-o"></i></a></li>
-                        <!-- <li><a href="wilayah">Wilayah<i class="fa fa-map-marker"></i></a></li> -->
+                        <li><a href="wilayah">Wilayah<i class="fa fa-map-marker"></i></a></li>
                     </ul>
                 </li>
                 <?php if ($level=="superadmin") { ?>

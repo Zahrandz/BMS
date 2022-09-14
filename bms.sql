@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2022 at 05:14 AM
+-- Generation Time: Sep 14, 2022 at 04:17 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -185,7 +185,7 @@ CREATE TABLE `portfolio` (
   `nama` varchar(50) NOT NULL,
   `deskripsi` text NOT NULL,
   `lokasi` varchar(50) NOT NULL,
-  `tanggal` datetime NOT NULL,
+  `id_wilayah` int(11) DEFAULT NULL,
   `foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -193,14 +193,14 @@ CREATE TABLE `portfolio` (
 -- Dumping data for table `portfolio`
 --
 
-INSERT INTO `portfolio` (`id_portfolio`, `nama`, `deskripsi`, `lokasi`, `tanggal`, `foto`) VALUES
-(1, 'Portfolio 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus. ', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', '2022-08-10 10:34:00', '1.png'),
-(3, 'Portfolio 2', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', '', '2022-09-10 19:21:00', '3.png'),
-(4, 'Portfolio 3', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', '', '2022-09-09 20:22:00', '4.png'),
-(5, 'Portfolio 4', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', '', '2022-09-09 19:23:00', '5.png'),
-(6, 'Portfolio 5', 'Nullam augue nulla, lacinia in tellus a, rhoncus pellentesque elit. Quisque et mauris odio. In diam neque, laoreet eu metus vitae, tempor elementum sem. ', '', '2022-09-09 20:23:00', '6.png'),
-(7, 'Portfolio 6', 'Nulla posuere urna ac lectus iaculis rutrum. Mauris non placerat nibh. Maecenas eget odio ac enim euismod fringilla nec eu mi.', '', '2022-09-09 21:24:00', '7.png'),
-(8, 'coba', 'coba', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', '2022-09-12 10:13:00', '');
+INSERT INTO `portfolio` (`id_portfolio`, `nama`, `deskripsi`, `lokasi`, `id_wilayah`, `foto`) VALUES
+(1, 'Portfolio 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus. ', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', 1, '1.png'),
+(3, 'Portfolio 2', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', '', NULL, '3.png'),
+(4, 'Portfolio 3', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', '', NULL, '4.png'),
+(5, 'Portfolio 4', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', '', NULL, '5.png'),
+(6, 'Portfolio 5', 'Nullam augue nulla, lacinia in tellus a, rhoncus pellentesque elit. Quisque et mauris odio. In diam neque, laoreet eu metus vitae, tempor elementum sem. ', '', NULL, '6.png'),
+(7, 'Portfolio 6', 'Nulla posuere urna ac lectus iaculis rutrum. Mauris non placerat nibh. Maecenas eget odio ac enim euismod fringilla nec eu mi.', '', NULL, '7.png'),
+(8, 'coba', 'coba', 'https://maps.google.com/?q=Jl.+KP.Dalam+IV+No.16%2', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -224,7 +224,8 @@ INSERT INTO `testimoni` (`id_testimoni`, `nama`, `deskripsi`, `id_jabatan`, `fot
 (1, 'Muhammad Zahran', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida nisi nisi, viverra congue justo suscipit dapibus.', 9, ''),
 (3, 'Sara Wilson', 'Donec pellentesque nulla non arcu interdum semper. In ac eros condimentum, aliquet arcu ac, malesuada magna.', 10, '3.png'),
 (4, 'Jena Karlis', 'In sed arcu eget sapien accumsan gravida. Nam commodo ligula ut felis gravida, vel fringilla lacus semper. Quisque interdum a dui faucibus varius.', 13, '4.png'),
-(5, 'Matt Brandon', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', 6, '5.png');
+(5, 'Matt Brandon', 'Morbi mauris velit, pharetra eget ligula at, faucibus faucibus tortor. Aliquam erat volutpat. Maecenas mauris est, scelerisque non justo quis, viverra euismod lacus.', 6, '5.png'),
+(6, 'Muhammad Zahran', 'coba', 7, '');
 
 -- --------------------------------------------------------
 
@@ -310,8 +311,7 @@ ALTER TABLE `kota`
 -- Indexes for table `pasar`
 --
 ALTER TABLE `pasar`
-  ADD PRIMARY KEY (`id_pasar`),
-  ADD KEY `id_wilayah` (`id_wilayah`);
+  ADD PRIMARY KEY (`id_pasar`);
 
 --
 -- Indexes for table `pesan`
@@ -323,7 +323,8 @@ ALTER TABLE `pesan`
 -- Indexes for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  ADD PRIMARY KEY (`id_portfolio`);
+  ADD PRIMARY KEY (`id_portfolio`),
+  ADD KEY `id_wilayah` (`id_wilayah`);
 
 --
 -- Indexes for table `testimoni`
@@ -394,13 +395,13 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id_portfolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_portfolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -425,10 +426,10 @@ ALTER TABLE `karyawan`
   ADD CONSTRAINT `karyawan_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `pasar`
+-- Constraints for table `portfolio`
 --
-ALTER TABLE `pasar`
-  ADD CONSTRAINT `pasar_ibfk_1` FOREIGN KEY (`id_wilayah`) REFERENCES `wilayah` (`id_wilayah`);
+ALTER TABLE `portfolio`
+  ADD CONSTRAINT `portfolio_ibfk_1` FOREIGN KEY (`id_wilayah`) REFERENCES `wilayah` (`id_wilayah`);
 
 --
 -- Constraints for table `testimoni`

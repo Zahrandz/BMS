@@ -7,13 +7,13 @@ class portfolio{
         $this->db = $this->db->get_koneksi();
     }
  
-    public function tambah($nama,$deskripsi,$lokasi,$tanggal)
+    public function tambah($nama,$deskripsi,$lokasi,$id_wilayah)
     {
-        $insert = $this->db->prepare('INSERT INTO portfolio (nama,deskripsi,lokasi,tanggal) VALUES (?,?,?,?)');
+        $insert = $this->db->prepare('INSERT INTO portfolio (nama,deskripsi,lokasi,id_wilayah) VALUES (?,?,?,?)');
         $insert->bindParam(1, $nama);
         $insert->bindParam(2, $deskripsi);
         $insert->bindParam(3, $lokasi);
-        $insert->bindParam(4, $tanggal);
+        $insert->bindParam(4, $id_wilayah);
         $insert->execute();
         return $insert;
     }
@@ -33,12 +33,12 @@ class portfolio{
         return $data;
     }
  
-    public function ubah($id_portfolio,$nama,$deskripsi,$lokasi,$tanggal){
-        $update = $this->db->prepare('UPDATE portfolio SET nama=?, deskripsi=?, lokasi=?, tanggal=? WHERE `id_portfolio`=?');
+    public function ubah($id_portfolio,$nama,$deskripsi,$lokasi,$id_wilayah){
+        $update = $this->db->prepare('UPDATE portfolio SET nama=?, deskripsi=?, lokasi=?, id_wilayah=? WHERE `id_portfolio`=?');
         $update->bindParam(1, $nama);
         $update->bindParam(2, $deskripsi);
         $update->bindParam(3, $lokasi);
-        $update->bindParam(4, $tanggal);
+        $update->bindParam(4, $id_wilayah);
         $update->bindParam(5, $id_portfolio);
         $update->execute();
         return $update;
