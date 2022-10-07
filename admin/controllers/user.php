@@ -75,7 +75,9 @@
       //get foto
       $f = $user->tampil_id($i)["foto"];
       $n = $user->tampil_id($i)["nama"];
-      unlink("assets/images/users/$f");
+      if ($f) {
+        unlink("assets/images/users/$f");
+      }
       $user->hapus($i);
       $success = $n." berhasil dihapus";
     }
